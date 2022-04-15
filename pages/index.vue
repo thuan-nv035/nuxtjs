@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <div v-if="$fetchState.pending">
       <div class="flex items-center justify-center mt-5">
         <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
@@ -129,6 +130,9 @@
       this.topSoldProducts = resp.topSoldProducts
       this.topViewProducts = resp.topViewProducts
     },
-    fetchOnServer: false
+    fetchOnServer: false,
+    mounted(){
+      this.$alert('hello')
+    }
   }
 </script>

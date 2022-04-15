@@ -37,6 +37,8 @@ export default {
   plugins: [
     '~/plugins/axios',
     '~/plugins/repositories',
+    {src: '~/plugins/alert', ssr: false},
+    {src: '~/plugins/v-tooltip', ssr: false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
