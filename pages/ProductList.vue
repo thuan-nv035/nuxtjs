@@ -13,7 +13,7 @@
       //...mapState('productStore', ['products'])
     },
     methods: {
-      ...mapActions('productStore', ['getProducts']),
+      // ...mapActions('productStore', ['getProducts']),
       getProducts() {
         this.$store.dispatch('productStore/getProducts');
       }
