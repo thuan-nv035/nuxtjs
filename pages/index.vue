@@ -21,7 +21,14 @@
             </div>
             <!--Articles-->
             <div class="mt-6">
-              <div class="flex max-w-4xl px-10 py-6 mx-auto bg-white rounded-lg shadow-md"
+              <div v-if="$fetchState.pending">
+                <div class="flex items-center justify-center mt-5">
+                  <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
+                    <span class="visually-hidden"></span>
+                  </div>
+                </div>
+              </div>
+              <div v-if="!$fetchState.pending && !$fetchState.error" class="flex max-w-4xl px-10 py-6 mx-auto bg-white rounded-lg shadow-md"
                    v-for="(listArticlesItem,listArticlesIndex) in listArticles.articles" :key="listArticlesIndex">
                 <div>
                   <img class="flex-1 w-72 h-72 object-cover" :src="listArticlesItem.urlToImage" alt="">
